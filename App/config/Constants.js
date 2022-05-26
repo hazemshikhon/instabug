@@ -28,6 +28,6 @@ export const fonts = {
   AR: "Almarai-Regular",
   AB: "Almarai-Bold",
   AL: "Almarai-Light",
-  PB: '"Poppins-Bold"',
+  PB: "Poppins-Bold",
   PL: "Poppins-Light",
 };
