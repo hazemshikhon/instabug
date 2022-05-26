@@ -1,10 +1,12 @@
-import axios from 'axios';
-import {I18nManager} from 'react-native';
+import axios from "axios";
 
 export default function getData(url) {
-  return axios.get(url, {
+  return axios(url, {
+    method: "GET",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
+      Accept: "Application/json",
     },
+    data: undefined,
   });
 }

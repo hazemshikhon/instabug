@@ -5,36 +5,31 @@ import {
   SafeAreaView,
   FlatList,
   ActivityIndicator,
-  Image,
+  StyleSheet,
+  TouchableOpacity,
 } from "react-native";
 import { baseUrl, colors } from "../config/Constants";
 import getData from "../helpers/getData";
-import Load from "../components/Load";
-import RowText from "../components/RowText";
-const ListMovies = ({ navigation }) => {
+import FirstShow from "../components/MoviesCards/FirstShow";
+import SecondShow from "../components/MoviesCards/SecondShow";
+
+const ListMovies = ({}) => {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
   const [refreshed, setRefreshed] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [language, setLanguage] = useState("en");
+  const [showWay, setShowWay] = useState(1);
 
   useEffect(() => {
-    let isComponentMounted = true;
-
-    if (isComponentMounted) {
-      fetchRows();
-    }
+    fetchMovies();
 
     setLoading(false);
-    return () => {
-      isComponentMounted = false;
-    };
-  }, [page, refreshed]);
+  }, [page, refreshed, language]);
 
-  const fetchRows = () => {
-    console.log("ff", page);
-    getData(`${baseUrl}&page=${page}`)
+  const fetchMovies = () => {
+    getData(`${baseUrl}&page=${page}&language=${language}`)
       .then((response) => {
-        console.log("reees22", response);
         setData(data.concat(response.data.results));
         setLoading(false);
       })
@@ -42,50 +37,69 @@ const ListMovies = ({ navigation }) => {
         console.log(error);
       });
   };
-  const rowItem = ({ item }) => (
-    <View
-      style={{
-        marginVertical: 30,
-        backgroundColor: "white",
-        elevation: 2,
-        marginHorizontal: 3,
-      }}
-    >
-      <Image
-        source={{ uri: `https://image.tmdb.org/t/p/w500${item.poster_path}` }}
-        style={{ width: "100%", height: 200, resizeMode: "cover" }}
-      />
-      <View style={{ margin: 10 }}>
-        <RowText textOne={"Title"} textTwo={item.title} />
-        {/* <RowText textOne={"Date"} textTwo={item.release_date} /> */}
-        {/* <RowText textOne={'OverView'} textTwo={item.overview} /> */}
 
-        {/* <Text style={{color: colors.font}}>{item.title}</Text>
-        <Text style={{color: colors.font}}>{item.release_date}</Text> */}
-        <Text style={{ color: colors.red, lineHeight: 22 }}>
-          {item.overview}
-        </Text>
-      </View>
-    </View>
-  );
-  const fetchMoreRows = () => {
+  const MovieItem = ({ item }) =>
+    showWay == 1 ? (
+      <FirstShow item={item} language={language} />
+    ) : (
+      <SecondShow item={item} language={language} />
+    );
+
+  const fetchMoreMovies = () => {
     setLoading(true);
     let newPage = page + 1;
     setPage(newPage);
   };
+
   return (
-    <View
-      style={{ flex: 1, paddingHorizontal: 20, backgroundColor: "#FCFCFC" }}
-    >
+    <View style={styles.container}>
       <SafeAreaView />
+      <View style={{ flexDirection: "row" }}>
+        <TouchableOpacity
+          onPress={() => {
+            setShowWay(showWay == 1 ? 2 : 1);
+          }}
+          style={[
+            styles.languageButton,
+            {
+              alignSelf: language == "en" ? "flex-start" : "flex-end",
+            },
+          ]}
+        >
+          <Text style={styles.text}>Chenge Language</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          onPress={() => {
+            setLoading(true);
+            setRefreshed(!refreshed);
+            setData([]);
+            setPage(1);
+            setLanguage(language === "en" ? "ar" : "en");
+          }}
+          style={{
+            borderRadius: 10,
+            backgroundColor: colors.lightred,
+            width: 45,
+            height: 45,
+            justifyContent: "center",
+            alignItems: "center",
+            alignSelf: language == "en" ? "flex-start" : "flex-end",
+            marginTop: 20,
+          }}
+        >
+          <Text style={styles.text}>{language.toUpperCase()}</Text>
+        </TouchableOpacity>
+      </View>
+
       <FlatList
         style={{ flex: 1 }}
         onRefresh={() => setRefreshed(!refreshed)}
         refreshing={loading}
-        onEndReached={fetchMoreRows}
+        onEndReached={fetchMoreMovies}
         onEndReachedThreshold={0.2}
         data={data}
-        renderItem={rowItem}
+        renderItem={MovieItem}
         keyExtractor={(item, i) => i.toString()}
         ListFooterComponent={() => {
           if (!loading)
@@ -98,3 +112,24 @@ const ListMovies = ({ navigation }) => {
 };
 
 export default ListMovies;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingHorizontal: 10,
+    backgroundColor: "#FCFCFC",
+  },
+  languageButton: {
+    borderRadius: 10,
+    backgroundColor: colors.lightred,
+    width: 45,
+    height: 45,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 20,
+  },
+  text: {
+    color: colors.maincolor,
+    fontWeight: "bold",
+  },
+});
