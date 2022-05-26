@@ -54,7 +54,6 @@ const ListMovies = ({}) => {
   return (
     <View style={styles.container}>
       <SafeAreaView />
-      <Text>{data.length}</Text>
       <View style={styles.buttonsConatiner}>
         <TouchableOpacity
           onPress={() => setShowWay(showWay == 1 ? 2 : 1)}
