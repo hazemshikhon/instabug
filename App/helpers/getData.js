@@ -7,6 +7,5 @@ export default function getData(url) {
       "Content-Type": "application/json",
       Accept: "Application/json",
     },
-    data: undefined,
   });
 }

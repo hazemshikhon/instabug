@@ -9,13 +9,7 @@ const Stack = createStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={({ navigation, route }) => ({
-          headerShown: true,
-          headerShadowVisible: true,
-          gestureEnabled: false,
-        })}
-      >
+      <Stack.Navigator>
         <Stack.Screen name="ListMovies" component={ListMovies} />
       </Stack.Navigator>
     </NavigationContainer>

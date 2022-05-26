@@ -12,13 +12,12 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		52BF0DC7283EBA3D00000FF9 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52BF0DC1283EBA3C00000FF9 /* Poppins-Light.ttf */; };
-		52BF0DC8283EBA3D00000FF9 /* Almarai-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52BF0DC2283EBA3D00000FF9 /* Almarai-Bold.ttf */; };
-		52BF0DC9283EBA3D00000FF9 /* Almarai-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52BF0DC3283EBA3D00000FF9 /* Almarai-Regular.ttf */; };
-		52BF0DCA283EBA3D00000FF9 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52BF0DC4283EBA3D00000FF9 /* Poppins-Bold.ttf */; };
-		52BF0DCB283EBA3D00000FF9 /* Almarai-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52BF0DC5283EBA3D00000FF9 /* Almarai-Light.ttf */; };
-		52BF0DCC283EBA3D00000FF9 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52BF0DC6283EBA3D00000FF9 /* Poppins-Medium.ttf */; };
-		52BF0DCE283EBB1D00000FF9 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52BF0DCD283EBB1D00000FF9 /* Poppins-Regular.ttf */; };
+		52C35A142840195E009ACAD4 /* Almarai-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52C35A0E2840195D009ACAD4 /* Almarai-Bold.ttf */; };
+		52C35A152840195E009ACAD4 /* Almarai-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52C35A0F2840195D009ACAD4 /* Almarai-Regular.ttf */; };
+		52C35A162840195E009ACAD4 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52C35A102840195E009ACAD4 /* Poppins-Bold.ttf */; };
+		52C35A172840195E009ACAD4 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52C35A112840195E009ACAD4 /* Poppins-Light.ttf */; };
+		52C35A182840195E009ACAD4 /* Almarai-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52C35A122840195E009ACAD4 /* Almarai-Light.ttf */; };
+		52C35A192840195E009ACAD4 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52C35A132840195E009ACAD4 /* Poppins-Medium.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-instabug-instabugTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-instabug-instabugTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -45,13 +44,12 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = instabug/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-instabug-instabugTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-instabug-instabugTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-instabug.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instabug.debug.xcconfig"; path = "Target Support Files/Pods-instabug/Pods-instabug.debug.xcconfig"; sourceTree = "<group>"; };
-		52BF0DC1283EBA3C00000FF9 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Light.ttf"; path = "../android/app/src/main/assets/fonts/Poppins-Light.ttf"; sourceTree = "<group>"; };
-		52BF0DC2283EBA3D00000FF9 /* Almarai-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Almarai-Bold.ttf"; path = "../android/app/src/main/assets/fonts/Almarai-Bold.ttf"; sourceTree = "<group>"; };
-		52BF0DC3283EBA3D00000FF9 /* Almarai-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Almarai-Regular.ttf"; path = "../android/app/src/main/assets/fonts/Almarai-Regular.ttf"; sourceTree = "<group>"; };
-		52BF0DC4283EBA3D00000FF9 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Bold.ttf"; path = "../android/app/src/main/assets/fonts/Poppins-Bold.ttf"; sourceTree = "<group>"; };
-		52BF0DC5283EBA3D00000FF9 /* Almarai-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Almarai-Light.ttf"; path = "../android/app/src/main/assets/fonts/Almarai-Light.ttf"; sourceTree = "<group>"; };
-		52BF0DC6283EBA3D00000FF9 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Medium.ttf"; path = "../android/app/src/main/assets/fonts/Poppins-Medium.ttf"; sourceTree = "<group>"; };
-		52BF0DCD283EBB1D00000FF9 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Regular.ttf"; path = "../android/app/src/main/assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		52C35A0E2840195D009ACAD4 /* Almarai-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Almarai-Bold.ttf"; path = "../App/assets/fonts/Almarai-Bold.ttf"; sourceTree = "<group>"; };
+		52C35A0F2840195D009ACAD4 /* Almarai-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Almarai-Regular.ttf"; path = "../App/assets/fonts/Almarai-Regular.ttf"; sourceTree = "<group>"; };
+		52C35A102840195E009ACAD4 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Bold.ttf"; path = "../App/assets/fonts/Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		52C35A112840195E009ACAD4 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Light.ttf"; path = "../App/assets/fonts/Poppins-Light.ttf"; sourceTree = "<group>"; };
+		52C35A122840195E009ACAD4 /* Almarai-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Almarai-Light.ttf"; path = "../App/assets/fonts/Almarai-Light.ttf"; sourceTree = "<group>"; };
+		52C35A132840195E009ACAD4 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Medium.ttf"; path = "../App/assets/fonts/Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-instabug.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instabug.release.xcconfig"; path = "Target Support Files/Pods-instabug/Pods-instabug.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-instabug-instabugTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instabug-instabugTests.debug.xcconfig"; path = "Target Support Files/Pods-instabug-instabugTests/Pods-instabug-instabugTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-instabug.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-instabug.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,13 +128,12 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				52BF0DCD283EBB1D00000FF9 /* Poppins-Regular.ttf */,
-				52BF0DC2283EBA3D00000FF9 /* Almarai-Bold.ttf */,
-				52BF0DC5283EBA3D00000FF9 /* Almarai-Light.ttf */,
-				52BF0DC3283EBA3D00000FF9 /* Almarai-Regular.ttf */,
-				52BF0DC4283EBA3D00000FF9 /* Poppins-Bold.ttf */,
-				52BF0DC1283EBA3C00000FF9 /* Poppins-Light.ttf */,
-				52BF0DC6283EBA3D00000FF9 /* Poppins-Medium.ttf */,
+				52C35A0E2840195D009ACAD4 /* Almarai-Bold.ttf */,
+				52C35A122840195E009ACAD4 /* Almarai-Light.ttf */,
+				52C35A0F2840195D009ACAD4 /* Almarai-Regular.ttf */,
+				52C35A102840195E009ACAD4 /* Poppins-Bold.ttf */,
+				52C35A112840195E009ACAD4 /* Poppins-Light.ttf */,
+				52C35A132840195E009ACAD4 /* Poppins-Medium.ttf */,
 				13B07FAE1A68108700A75B9A /* instabug */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* instabugTests */,
@@ -263,15 +260,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52BF0DC9283EBA3D00000FF9 /* Almarai-Regular.ttf in Resources */,
-				52BF0DCA283EBA3D00000FF9 /* Poppins-Bold.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
-				52BF0DCE283EBB1D00000FF9 /* Poppins-Regular.ttf in Resources */,
-				52BF0DCB283EBA3D00000FF9 /* Almarai-Light.ttf in Resources */,
-				52BF0DC8283EBA3D00000FF9 /* Almarai-Bold.ttf in Resources */,
-				52BF0DCC283EBA3D00000FF9 /* Poppins-Medium.ttf in Resources */,
-				52BF0DC7283EBA3D00000FF9 /* Poppins-Light.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				52C35A142840195E009ACAD4 /* Almarai-Bold.ttf in Resources */,
+				52C35A152840195E009ACAD4 /* Almarai-Regular.ttf in Resources */,
+				52C35A162840195E009ACAD4 /* Poppins-Bold.ttf in Resources */,
+				52C35A172840195E009ACAD4 /* Poppins-Light.ttf in Resources */,
+				52C35A182840195E009ACAD4 /* Almarai-Light.ttf in Resources */,
+				52C35A192840195E009ACAD4 /* Poppins-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,34 +7,34 @@ import {
   ActivityIndicator,
   StyleSheet,
   TouchableOpacity,
+  Image,
 } from "react-native";
 import { baseUrl, colors } from "../config/Constants";
 import getData from "../helpers/getData";
 import FirstShow from "../components/MoviesCards/FirstShow";
 import SecondShow from "../components/MoviesCards/SecondShow";
-
+const AR = "ar";
+const EN = "en";
 const ListMovies = ({}) => {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
-  const [refreshed, setRefreshed] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [language, setLanguage] = useState("en");
+  const [language, setLanguage] = useState(EN);
   const [showWay, setShowWay] = useState(1);
 
   useEffect(() => {
     fetchMovies();
-
     setLoading(false);
-  }, [page, refreshed, language]);
+  }, [page, language]);
 
   const fetchMovies = () => {
     getData(`${baseUrl}&page=${page}&language=${language}`)
       .then((response) => {
-        setData(data.concat(response.data.results));
+        setData([...data, ...response.data.results]);
         setLoading(false);
       })
       .catch(function (error) {
-        console.log(error);
+        alert("Something Went Wrong");
       });
   };
 
@@ -54,58 +54,47 @@ const ListMovies = ({}) => {
   return (
     <View style={styles.container}>
       <SafeAreaView />
-      <View style={{ flexDirection: "row" }}>
+      <Text>{data.length}</Text>
+      <View style={styles.buttonsConatiner}>
         <TouchableOpacity
-          onPress={() => {
-            setShowWay(showWay == 1 ? 2 : 1);
-          }}
-          style={[
-            styles.languageButton,
-            {
-              alignSelf: language == "en" ? "flex-start" : "flex-end",
-            },
-          ]}
+          onPress={() => setShowWay(showWay == 1 ? 2 : 1)}
+          style={styles.languageButton}
         >
-          <Text style={styles.text}>Chenge Language</Text>
+          <Image
+            source={require("../assets/layout.png")}
+            style={[
+              styles.icon,
+              {
+                tintColor: showWay == 1 ? colors.maincolor : colors.font,
+              },
+            ]}
+          />
         </TouchableOpacity>
 
         <TouchableOpacity
           onPress={() => {
             setLoading(true);
-            setRefreshed(!refreshed);
             setData([]);
             setPage(1);
-            setLanguage(language === "en" ? "ar" : "en");
+            setLanguage(language === EN ? AR : EN);
           }}
-          style={{
-            borderRadius: 10,
-            backgroundColor: colors.lightred,
-            width: 45,
-            height: 45,
-            justifyContent: "center",
-            alignItems: "center",
-            alignSelf: language == "en" ? "flex-start" : "flex-end",
-            marginTop: 20,
-          }}
+          style={styles.languageButton}
         >
-          <Text style={styles.text}>{language.toUpperCase()}</Text>
+          <Text style={styles.text}>
+            {language == AR ? EN.toUpperCase() : AR.toUpperCase()}
+          </Text>
         </TouchableOpacity>
       </View>
 
       <FlatList
-        style={{ flex: 1 }}
-        onRefresh={() => setRefreshed(!refreshed)}
-        refreshing={loading}
-        onEndReached={fetchMoreMovies}
-        onEndReachedThreshold={0.2}
         data={data}
         renderItem={MovieItem}
         keyExtractor={(item, i) => i.toString()}
-        ListFooterComponent={() => {
-          if (!loading)
-            return <ActivityIndicator size="large" color={"black"} />;
-          else return null;
-        }}
+        onEndReached={fetchMoreMovies}
+        onEndReachedThreshold={0.2}
+        ListFooterComponent={() =>
+          loading && <ActivityIndicator size="large" color={"black"} />
+        }
       />
     </View>
   );
@@ -126,10 +115,20 @@ const styles = StyleSheet.create({
     height: 45,
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 20,
+    marginTop: 10,
+    marginVertical: 10,
+    marginLeft: 5,
   },
   text: {
     color: colors.maincolor,
     fontWeight: "bold",
+  },
+  buttonsConatiner: {
+    flexDirection: "row",
+    justifyContent: "flex-end",
+  },
+  icon: {
+    width: 28,
+    height: 28,
   },
 });
